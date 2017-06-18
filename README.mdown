@@ -9,7 +9,7 @@
 3.将文件中的location提取出来，进行解密
 
 基本方法可以参考
-[link](https://github.com/listen1/listen1/tree/master/listen1/replay)
+[https://github.com/listen1/listen1/tree/master/listen1/replay](https://github.com/listen1/listen1/tree/master/listen1/replay)
 把关键部分提取出来就写成了ourl.py
 实现步骤是先将id插入固定的格式里得到一个xml文档的URL，以此为实参调用函数h，再提取出xml中的location传入caesar函数中，返回绝对地址。
 
