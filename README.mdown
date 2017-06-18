@@ -1,0 +1,27 @@
+# 如何获取虾米音乐的绝对地址
+
+如果想要获得虾米音乐的外链，
+
+1.首先获取音乐的id，
+1.得到音乐的绝对地址，对应一个XML文件，
+2.将文件中的location提取出来，进行解密
+
+基本方法可以参考
+[](https://github.com/listen1/listen1/tree/master/listen1/replay)
+把关键部分提取出来就写成了ourl.py
+实现步骤是先将id插入固定的格式里得到一个xml文档的URL，以此为实参调用函数h，再提取出xml中的location传入caesar函数中，返回绝对地址。
+
+但我在调试的时候发现，只有插入的song_id是纯数字的字符串才可以，而大部分歌曲的id都含有字母，插入固定格式中作为URL并不能得到XML文档，从而导致运行中断。
+
+当song_id不是纯数字字符串时如何使用呢？
+
+在检查网页上“下载”对应的源码时，我突然看到一串数字，如果用这串数字替代song_id插入，就可以获得音乐的XML文档！
+![](/img/1.jpg)
+
+提取这串数字的方法
+```
+num=response.doc('.do_collect .wrap').attr('onclick')
+num2=filter(str.isdigit,num)
+song_id=num2
+```
+
