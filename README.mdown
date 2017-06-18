@@ -10,7 +10,7 @@
 
 基本方法可以参考
 [https://github.com/listen1/listen1/tree/master/listen1/replay](https://github.com/listen1/listen1/tree/master/listen1/replay)
-把关键部分提取出来就写成了ourl.py
+把关键部分提取出来就写成了[ourl.py](https://github.com/smilevera/Music-search-engine/blob/master/ourl.py)
 实现步骤是先将id插入固定的格式里得到一个xml文档的URL，以此为实参调用函数h，再提取出xml中的location传入caesar函数中，返回绝对地址。
 
 但我在调试的时候发现，只有插入的song_id是纯数字的字符串才可以，而大部分歌曲的id都含有字母，插入固定格式中作为URL并不能得到XML文档，从而导致运行中断。
