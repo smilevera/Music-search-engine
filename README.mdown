@@ -3,8 +3,10 @@
 如果想要获得虾米音乐的外链，
 
 1.首先获取音乐的id，
-1.得到音乐的绝对地址，对应一个XML文件，
-2.将文件中的location提取出来，进行解密
+
+2.得到音乐的绝对地址，对应一个XML文件，
+
+3.将文件中的location提取出来，进行解密
 
 基本方法可以参考
 [](https://github.com/listen1/listen1/tree/master/listen1/replay)
